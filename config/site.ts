@@ -60,10 +60,10 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/nextui-org/nextui",
-    twitter: "https://twitter.com/getnextui",
-    docs: "https://nextui.org",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    github: "https://github.com/Antioch-Tech/bible-vector-search-ui",
+    docs: "",
+    twitter: '',
+    discord: '',
+    sponsor: "https://github.com/sponsors/tim-hub",
   },
 };

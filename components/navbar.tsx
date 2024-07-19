@@ -80,15 +80,38 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
-            <TwitterIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Discord" href={siteConfig.links.discord}>
-            <DiscordIcon className="text-default-500" />
-          </Link>
-          <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-            <GithubIcon className="text-default-500" />
-          </Link>
+          {siteConfig.links?.twitter && (
+            <Link
+              isExternal
+              aria-label="Twitter"
+              href={siteConfig.links.twitter}
+            >
+              <TwitterIcon className="text-default-500" />
+            </Link>
+          )}
+          {siteConfig.links?.discord && (
+            <Link
+              isExternal
+              aria-label="Discord"
+              href={siteConfig.links.discord}
+            >
+              <DiscordIcon className="text-default-500" />
+            </Link>
+          )}
+          {siteConfig.links?.docs && (
+            <Link
+              isExternal
+              aria-label="Documentation"
+              href={siteConfig.links.docs}
+            >
+              Docs
+            </Link>
+          )}
+          {siteConfig.links?.github && (
+            <Link isExternal aria-label="Github" href={siteConfig.links.github}>
+              <GithubIcon className="text-default-500" />
+            </Link>
+          )}
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
