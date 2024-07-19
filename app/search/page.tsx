@@ -1,16 +1,25 @@
 "use client";
 
-import { title } from "@/components/primitives";
 import { useRouter, useSearchParams } from "next/navigation";
-import { SearchInput } from "@/components/searchInput";
-import { useState } from "react";
+import { title } from "@/components/primitives";
 
-const getData = async (query: string): Promise<any[]> => {
-  const res = await fetch(`/api/search/?verse_query=${query}`);
+import { SearchInput } from "@/components/searchInput";
+
+import { useEffect, useState } from "react";
+import { IVerseResult } from "@/models/IVerseResult";
+import { SearchInputList } from "@/components/searchInputList";
+import Loading from "@/components/loading";
+
+const getData = async (query: string): Promise<IVerseResult[]> => {
+  const res = await fetch(`/api/search/?verse_query=${query}`, {
+    next: { revalidate: 3600 },
+  });
+
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
+
   return res.json();
 };
 
@@ -21,11 +30,21 @@ export default function SearchPage() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q") || "";
   const search = async (query: string) => {
+    if (!query) {
+      router.push("/search");
+      return;
+    }
+    router.push(`/search?q=${query}`);
+    setResults([]);
     const results = await getData(query);
     setResults(results);
-
-    router.push(`/search?q=${query}`);
   };
+
+  useEffect(() => {
+    if (query) {
+      search(query);
+    }
+  }, []);
 
   return (
     <>
@@ -36,14 +55,15 @@ export default function SearchPage() {
         <p>Search Bible verses in meaning not in words.</p>
       </div>
       <div className="flex w-full flex-wrap md:flex-nowrap gap-4">
-        <SearchInput onClick={search} value={query} />
+        <SearchInput value={query} onClick={search} />
       </div>
-      <div>
-        {results.map((result) => (
-          <div key={result.verse_number}>
-            <p>{result.verse_text}</p>
-          </div>
-        ))}
+
+      <div className="gap-y-2 flex flex-col mt-4">
+        {query && results?.length === 0 ? (
+          <Loading />
+        ) : (
+          <SearchInputList verseResults={results} query={query} />
+        )}
       </div>
     </>
   );
