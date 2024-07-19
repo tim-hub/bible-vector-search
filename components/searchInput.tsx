@@ -17,7 +17,7 @@ export const SearchInput = ({
   };
 
   return (
-    <>
+    <div className="flex flex-nowrap w-full min-w-sm gap-x-1">
       <Input
         aria-label="Search"
         classNames={{
@@ -46,6 +46,6 @@ export const SearchInput = ({
       <Button className="text-sm" color="primary" onClick={toSearch}>
         Search
       </Button>
-    </>
+    </div>
   );
 };
