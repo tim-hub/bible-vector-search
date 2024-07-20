@@ -21,8 +21,9 @@ const navItems = [
 ];
 
 const siteConfig = {
-  name: "Bible Vector Search",
-  description: "Search Bible verses by meanings not key words",
+  name: "Bible Sentiment Search",
+  description:
+    "Search Bible verses by meanings not key words (BBE Translation).",
   navItems: navItems,
   navMenuItems: navItems,
   links: {
