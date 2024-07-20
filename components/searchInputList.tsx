@@ -13,7 +13,7 @@ export const SearchInputList = ({
   return (
     <Suspense fallback={<Loading />}>
       {query &&
-        verseResults.map((result) => (
+        verseResults?.map((result) => (
           <VerseResult key={result.Index} verse={result} />
         ))}
     </Suspense>
