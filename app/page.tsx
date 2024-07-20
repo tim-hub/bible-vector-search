@@ -2,6 +2,8 @@ import { button as buttonStyles } from "@nextui-org/theme";
 import { title } from "@/components/primitives";
 import NextLink from "next/link";
 
+import { Image } from "@nextui-org/image";
+
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
@@ -35,6 +37,16 @@ export default function Home() {
       {/*    </span>*/}
       {/*  </Snippet>*/}
       {/*</div>*/}
+
+      <div className="mt-8">
+        <Image
+          width={374}
+          radius={"sm"}
+          loading="lazy"
+          src="https://i.imgur.com/snptle9.gif"
+          alt="Demo of Bible Vector Search"
+        />
+      </div>
     </section>
   );
 }
