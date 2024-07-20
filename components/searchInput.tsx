@@ -11,13 +11,13 @@ export const SearchInput = ({
 }: {
   value: string;
   onChange: (query: string) => void;
-  onSearch: () => void;
+  onSearch: () => Promise<void>;
 }) => {
   const [query, setQuery] = useState<string>(value);
 
   const toSearch = async () => {
     onChange(query);
-    onSearch();
+    await onSearch();
   };
 
   return (
