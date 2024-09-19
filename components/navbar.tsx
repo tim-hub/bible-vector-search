@@ -8,9 +8,7 @@ import {
   NavbarMenuItem,
 } from "@nextui-org/navbar";
 import { Button } from "@nextui-org/button";
-import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
-import { Input } from "@nextui-org/input";
 import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
@@ -22,12 +20,10 @@ import {
   GithubIcon,
   DiscordIcon,
   HeartFilledIcon,
-  SearchIcon,
   Logo,
 } from "@/components/icons";
 
 export const Navbar = () => {
-  
   return (
     <NextUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
@@ -122,9 +118,7 @@ export const Navbar = () => {
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <NextLink href={item.href}>
-                {item.label}
-              </NextLink>
+              <NextLink href={item.href}>{item.label}</NextLink>
             </NavbarMenuItem>
           ))}
         </div>

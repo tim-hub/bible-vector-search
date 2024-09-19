@@ -1,8 +1,8 @@
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
+import { useState } from "react";
 
 import { SearchIcon } from "@/components/icons";
-import { useState } from "react";
 
 export const SearchInput = ({
   value,

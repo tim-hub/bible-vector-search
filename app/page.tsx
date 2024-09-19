@@ -1,8 +1,8 @@
 import { button as buttonStyles } from "@nextui-org/theme";
-import { title } from "@/components/primitives";
 import NextLink from "next/link";
-
 import { Image } from "@nextui-org/image";
+
+import { title } from "@/components/primitives";
 
 export default function Home() {
   return (
@@ -40,11 +40,11 @@ export default function Home() {
 
       <div className="mt-8">
         <Image
-          width={374}
-          radius={"sm"}
-          loading="lazy"
-          src="https://i.imgur.com/snptle9.gif"
           alt="Demo of Bible Vector Search"
+          loading="lazy"
+          radius={"sm"}
+          src="https://i.imgur.com/snptle9.gif"
+          width={374}
         />
       </div>
     </section>

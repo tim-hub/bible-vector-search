@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+
 import { IVerseResult } from "@/models/IVerseResult";
 import Loading from "@/components/loading";
 import { VerseResult } from "@/components/verseResult";

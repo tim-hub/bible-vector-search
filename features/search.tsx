@@ -1,11 +1,12 @@
-import { IVerseResult } from "@/models/IVerseResult";
 import { useState } from "react";
+import { Input } from "@nextui-org/input";
+import { Button } from "@nextui-org/button";
+
+import { IVerseResult } from "@/models/IVerseResult";
 import { title } from "@/components/primitives";
 import Loading from "@/components/loading";
 import { SearchInputList } from "@/components/searchInputList";
-import { Input } from "@nextui-org/input";
 import { SearchIcon } from "@/components/icons";
-import { Button } from "@nextui-org/button";
 
 function debounceAsync<T extends (...args: any[]) => Promise<any>>(
   fn: T,
@@ -53,6 +54,7 @@ export default function Search() {
     setStartSearching(true);
     setResults([]);
     const results = await getData(query);
+
     setResults(results);
   };
 
@@ -100,7 +102,7 @@ export default function Search() {
         {startSearching && results?.length === 0 ? (
           <Loading />
         ) : (
-          <SearchInputList verseResults={results} query={query} />
+          <SearchInputList query={query} verseResults={results} />
         )}
       </div>
     </>

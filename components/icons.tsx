@@ -1,7 +1,7 @@
 import * as React from "react";
+import { Image, ImageProps } from "@nextui-org/image";
 
 import { IconSvgProps } from "@/types";
-import { Image, ImageProps } from "@nextui-org/image";
 
 export const Logo: React.FC<ImageProps> = ({
   width = 36,

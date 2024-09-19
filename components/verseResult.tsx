@@ -1,8 +1,8 @@
-import { IVerseResult } from "@/models/IVerseResult";
-
 import { Card, CardBody, CardFooter } from "@nextui-org/card";
 import { Divider } from "@nextui-org/divider";
 import { Chip } from "@nextui-org/chip";
+
+import { IVerseResult } from "@/models/IVerseResult";
 
 export const VerseResult = ({ verse }: { verse: IVerseResult }) => {
   const {
