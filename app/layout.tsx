@@ -57,7 +57,7 @@ export default function RootLayout({
               <Link
                 isExternal
                 className="flex items-center gap-1 text-current"
-                href="https://antioch.tech/?ref=bible-vector-search"
+                href="https://antiochtech.bai.uno/?ref=bible-vector-search"
                 title="Antioch Tech"
               >
                 <span className="text-default-600">Powered by</span>
