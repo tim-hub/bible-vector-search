@@ -17,7 +17,7 @@ export default function DocsPage() {
         <br />
         <h4>For example,</h4>
         <Code>
-          https://bible-search.antioch.tech/api/search?verse_query=GodIsLove
+          https://antiochtech-bible-search.bai.uno/api/search?verse_query=GodIsLove
         </Code>
       </div>
     </div>

@@ -1,7 +1,7 @@
 # Bible Vector Search
 
-URL: https://bible-search.antioch.tech
-API: https://bible-search.antioch.tech/api
+URL: https://antiochtech-bible-search.bai.uno
+API: https://antiochtech-bible-search.bai.uno/api/search
 
 
 
